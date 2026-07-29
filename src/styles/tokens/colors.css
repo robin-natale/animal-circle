@@ -1,50 +1,50 @@
 /**
  * Color tokens — Semantic design tokens for light and dark modes
- * Monochrome OKLCH palette (neutral, AstroDeck-style):
- *   near-black foreground on white in light mode, inverted in dark mode.
- * Chroma is 0 for surfaces/primary so the UI stays calm and never goes
- * "off-system"; functional status colors keep just enough chroma to read.
+ * "Woodland at Dawn" palette (warm, muted, nature-toned):
+ *   cream + deep pine in light mode, dark pine + copper glow in dark mode.
+ * Functional status colors (destructive/success/warning/info) stay
+ * independent so error/success meaning never gets confused with the brand.
  * These map to Tailwind via @theme block in global.css.
  */
 
 :root {
   /* === Core surfaces === */
-  --background: oklch(1 0 0deg);
-  --foreground: oklch(0.145 0 0deg);
-  --card: oklch(1 0 0deg);
-  --card-foreground: oklch(0.145 0 0deg);
-  --popover: oklch(1 0 0deg);
-  --popover-foreground: oklch(0.145 0 0deg);
+  --background: oklch(0.9705 0.0098 87.47deg); /* Cream #F8F5EE */
+  --foreground: oklch(0.3508 0.0367 168deg); /* Deep pine #274137 */
+  --card: oklch(0.995 0.002 87deg);
+  --card-foreground: oklch(0.3508 0.0367 168deg);
+  --popover: oklch(0.995 0.002 87deg);
+  --popover-foreground: oklch(0.3508 0.0367 168deg);
 
-  /* === Primary — neutral (near-black) === */
-  --primary: oklch(0.205 0 0deg);
-  --primary-foreground: oklch(0.985 0 0deg);
-  --primary-hover: oklch(0.27 0 0deg);
-  --primary-active: oklch(0.32 0 0deg);
-  --primary-muted: oklch(0.97 0 0deg);
+  /* === Primary — deep pine === */
+  --primary: oklch(0.3508 0.0367 168deg); /* Deep pine #274137 */
+  --primary-foreground: oklch(0.9705 0.0098 87.47deg); /* Cream */
+  --primary-hover: oklch(0.28 0.0367 168deg);
+  --primary-active: oklch(0.22 0.0367 168deg);
+  --primary-muted: oklch(0.93 0.02 168deg);
 
-  /* === Secondary === */
-  --secondary: oklch(0.97 0 0deg);
-  --secondary-foreground: oklch(0.205 0 0deg);
-  --secondary-hover: oklch(0.94 0 0deg);
+  /* === Secondary — olive === */
+  --secondary: oklch(0.93 0.025 128.2deg);
+  --secondary-foreground: oklch(0.3508 0.0367 168deg);
+  --secondary-hover: oklch(0.89 0.03 128.2deg);
 
-  /* === Accent === */
-  --accent: oklch(0.97 0 0deg);
-  --accent-foreground: oklch(0.205 0 0deg);
-  --accent-hover: oklch(0.94 0 0deg);
+  /* === Accent — muted copper === */
+  --accent: oklch(0.93 0.035 54.9deg);
+  --accent-foreground: oklch(0.4697 0.0405 55.2deg); /* Bark brown */
+  --accent-hover: oklch(0.89 0.045 54.9deg);
 
   /* === Muted === */
-  --muted: oklch(0.97 0 0deg);
+  --muted: oklch(0.95 0.015 100deg);
 
-  /* 0.50 keeps secondary text >= WCAG AA (>=4.5:1) on both white and muted bg */
-  --muted-foreground: oklch(0.5 0 0deg);
+  /* Bark brown keeps secondary text >= WCAG AA (6.3:1) on cream */
+  --muted-foreground: oklch(0.4697 0.0405 55.2deg); /* Bark brown #6D5545 */
 
   /* === Border & Ring === */
-  --border: oklch(0.922 0 0deg);
-  --ring: oklch(0.45 0 0deg);
-  --ring-offset: oklch(1 0 0deg);
+  --border: oklch(0.87 0.02 90deg);
+  --ring: oklch(0.5623 0.0583 128.2deg); /* Olive #6B7C57 */
+  --ring-offset: oklch(0.9705 0.0098 87.47deg);
 
-  /* === Semantic (functional status — kept chromatic) === */
+  /* === Semantic (functional status — kept independent of the brand) === */
   --destructive: oklch(0.577 0.245 27.325deg);
   --destructive-foreground: oklch(0.985 0 0deg);
   --success: oklch(0.62 0.16 150deg);
@@ -55,49 +55,49 @@
   --info-foreground: oklch(0.985 0 0deg);
 
   /* === Surface invert (for dark sections on light bg) === */
-  --surface-invert: oklch(0.205 0 0deg);
-  --surface-invert-foreground: oklch(0.985 0 0deg);
-  --surface-invert-border: oklch(0.32 0 0deg);
+  --surface-invert: oklch(0.2374 0.015 166.23deg); /* Dark bg */
+  --surface-invert-foreground: oklch(0.9585 0.0098 87.47deg); /* Dark text */
+  --surface-invert-border: oklch(0.4 0.03 160deg);
 }
 
 .dark {
   /* === Core surfaces === */
-  --background: oklch(0.145 0 0deg);
-  --foreground: oklch(0.985 0 0deg);
-  --card: oklch(0.205 0 0deg);
-  --card-foreground: oklch(0.985 0 0deg);
-  --popover: oklch(0.205 0 0deg);
-  --popover-foreground: oklch(0.985 0 0deg);
+  --background: oklch(0.2374 0.015 166.23deg); /* #18211D */
+  --foreground: oklch(0.9585 0.0098 87.47deg); /* #F4F1EA */
+  --card: oklch(0.2968 0.0185 161.19deg); /* #25302A */
+  --card-foreground: oklch(0.9585 0.0098 87.47deg);
+  --popover: oklch(0.2968 0.0185 161.19deg);
+  --popover-foreground: oklch(0.9585 0.0098 87.47deg);
 
-  /* === Primary — neutral (near-white) === */
-  --primary: oklch(0.985 0 0deg);
-  --primary-foreground: oklch(0.205 0 0deg);
-  --primary-hover: oklch(0.9 0 0deg);
-  --primary-active: oklch(0.82 0 0deg);
-  --primary-muted: oklch(0.269 0 0deg);
+  /* === Primary — muted copper (dawn glow against dark pine) === */
+  --primary: oklch(0.6478 0.0827 54.9deg); /* Muted copper #B6815D */
+  --primary-foreground: oklch(0.2374 0.015 166.23deg); /* Dark bg */
+  --primary-hover: oklch(0.72 0.08 54.9deg);
+  --primary-active: oklch(0.78 0.075 54.9deg);
+  --primary-muted: oklch(0.32 0.03 55deg);
 
   /* === Secondary === */
-  --secondary: oklch(0.269 0 0deg);
-  --secondary-foreground: oklch(0.985 0 0deg);
-  --secondary-hover: oklch(0.32 0 0deg);
+  --secondary: oklch(0.34 0.02 150deg);
+  --secondary-foreground: oklch(0.9585 0.0098 87.47deg);
+  --secondary-hover: oklch(0.39 0.022 150deg);
 
   /* === Accent === */
-  --accent: oklch(0.269 0 0deg);
-  --accent-foreground: oklch(0.985 0 0deg);
-  --accent-hover: oklch(0.32 0 0deg);
+  --accent: oklch(0.34 0.025 130deg);
+  --accent-foreground: oklch(0.9585 0.0098 87.47deg);
+  --accent-hover: oklch(0.39 0.03 130deg);
 
   /* === Muted === */
-  --muted: oklch(0.269 0 0deg);
+  --muted: oklch(0.3 0.018 160deg);
 
-  /* 0.74 keeps secondary text >= WCAG AA (>=4.5:1) on dark muted bg */
-  --muted-foreground: oklch(0.74 0 0deg);
+  /* 0.74L keeps secondary text >= WCAG AA on dark muted bg */
+  --muted-foreground: oklch(0.74 0.015 90deg);
 
   /* === Border & Ring === */
-  --border: oklch(0.32 0 0deg);
-  --ring: oklch(0.6 0 0deg);
-  --ring-offset: oklch(0.145 0 0deg);
+  --border: oklch(0.36 0.02 160deg);
+  --ring: oklch(0.7 0.08 54.9deg); /* Copper glow ring */
+  --ring-offset: oklch(0.2374 0.015 166.23deg);
 
-  /* === Semantic (functional status — kept chromatic) === */
+  /* === Semantic (functional status — kept independent of the brand) === */
   --destructive: oklch(0.704 0.191 22.216deg);
   --destructive-foreground: oklch(0.985 0 0deg);
   --success: oklch(0.7 0.15 150deg);
@@ -108,9 +108,9 @@
   --info-foreground: oklch(0.145 0 0deg);
 
   /* === Surface invert (for light sections on dark bg) === */
-  --surface-invert: oklch(0.985 0 0deg);
-  --surface-invert-foreground: oklch(0.205 0 0deg);
-  --surface-invert-border: oklch(0.85 0 0deg);
+  --surface-invert: oklch(0.9705 0.0098 87.47deg); /* Cream */
+  --surface-invert-foreground: oklch(0.3508 0.0367 168deg); /* Deep pine */
+  --surface-invert-border: oklch(0.87 0.02 90deg);
 }
 
 /* === Radius === */
