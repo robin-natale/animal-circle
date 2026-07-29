@@ -61,7 +61,7 @@ pnpm run check:kpis # design-convention checks (the on-system source of truth)
 
 ### Starting a task
 
-Point the agent at the system first, then state the goal:
+Point Claude at the system first, then state the goal:
 
 ```text
 Read AGENTS.md and system/globals/ before editing.

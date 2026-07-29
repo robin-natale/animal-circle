@@ -35,7 +35,7 @@
   ascent-override: 103%;
   descent-override: 20%;
   line-gap-override: 0%;
-  size-adjust: 107%;
+  size-adjust: 102%;
   font-display: swap;
 }
 
@@ -305,6 +305,43 @@ code {
   );
 }
 
+.bg-waves {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    repeating-radial-gradient(
+      ellipse 90% 60% at 50% 0,
+      transparent 0 35px,
+      color-mix(in srgb, var(--foreground) 0.7%, transparent) 42px 43px
+    );
+
+  mask-image: radial-gradient(
+    ellipse 80% 65% at 50% 0,
+    black 30%,
+    transparent 100%
+  );
+
+  transform-origin: top center;
+  animation: breathe 20s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    background-position: center 0;
+  }
+
+  50% {
+    background-position: center -12px;
+  }
+}
+
 /*
  * .bg-glow — soft monochrome spotlight behind hero content.
  */
@@ -315,7 +352,7 @@ code {
   pointer-events: none;
   background: radial-gradient(
     ellipse 60% 50% at 50% -10%,
-    color-mix(in srgb, var(--foreground) 8%, transparent),
+    color-mix(in srgb, var(--foreground) 7%, transparent),
     transparent 70%
   );
 }
