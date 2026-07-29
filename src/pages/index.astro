@@ -1,0 +1,128 @@
+---
+import MarketingLayout from "../layouts/MarketingLayout.astro";
+import Hero from "../components/Hero.astro";
+import FAQ from "../components/FAQ.astro";
+import CTA from "../components/CTA.astro";
+import { FeatureTabs, Credibility } from "../components/landing/index";
+import { t } from "../i18n/ui";
+
+const locale = (Astro.currentLocale || "en") as "en";
+const tabs = [
+  {
+    id: "communication",
+    icon: "message-circle",
+    heading: "Animal Communication",
+    description:
+      "One-to-one sessions to understand how an animal is really feeling, what's troubling them, and what would genuinely help.",
+    points: [
+      "Behavioural and emotional insight from the animal's perspective",
+      "Support through transitions, illness, and end-of-life",
+      "Available to sanctuaries, rescues, and animal centres",
+    ],
+    visual: "\"How are you feeling, and what do you need?\"",
+  },
+  {
+    id: "energetic",
+    icon: "sparkles",
+    heading: "Energetic Support",
+    description:
+      "Gentle, non-invasive energetic and spiritual support for animals experiencing stress, illness, grief, or transition.",
+    points: [
+      "Calming support for anxious or traumatised animals",
+      "Support alongside veterinary and behavioural care",
+      "Offered with care, patience, and respect for each animal's pace",
+    ],
+    visual: "Presence. Patience. Compassion.",
+  },
+  {
+    id: "collective",
+    icon: "circle-dot",
+    heading: "One Collective",
+    description:
+      "We hold the view that animals are not separate from us — they are part of the same living, feeling collective we all belong to.",
+    points: [
+      "Welfare-centred, never transactional",
+      "Every animal met as a whole being",
+      "In service of the people who care for them every day",
+    ],
+    visual: "We are not separate. We are part of the same circle.",
+  },
+];
+---
+
+<MarketingLayout
+  title={t(locale, "nav.home")}
+  description="Animal communication and energetic support for animals in need, offered to sanctuaries, rescues, and animal centres."
+  locale={locale}
+  path="/"
+>
+  <Hero
+    variant="centered"
+    eyebrow="Animal Circle"
+    headline={t(locale, "hero.title")}
+    subheadline={t(locale, "hero.subtitle")}
+    primaryCta={{ label: t(locale, "hero.cta"), href: "/services" }}
+    secondaryCta={{ label: "Read our story", href: "/about" }}
+    locale={locale}
+  />
+
+  <section class="container py-16">
+    <header class="section-head">
+      <p class="section-head__eyebrow">How we help</p>
+      <h2 class="section-head__title">Support for animals in need</h2>
+      <p class="section-head__lead">
+        Communication, energetic care, and welfare advocacy for animals in
+        the care of sanctuaries, rescues, and animal centres.
+      </p>
+    </header>
+    <FeatureTabs client:visible tabs={tabs} />
+  </section>
+
+  <section class="container py-16">
+    <Credibility
+      stats={[
+        { value: "1", label: "Belief: animals are part of our collective" },
+        { value: "All", label: "Welfare comes first, always" },
+        { value: "0", label: "Judgement — every animal is met with care" },
+      ]}
+      logos={[]}
+    />
+  </section>
+
+  <FAQ
+    title="Frequently asked questions"
+    items={[
+      {
+        question: "Who is this service for?",
+        answer:
+          "Animal Circle works with sanctuaries, rescues, and animal centres supporting animals in need — not individual pet owners.",
+      },
+      {
+        question: "What happens in a session?",
+        answer:
+          "We connect with the animal to understand how they're feeling, what may be troubling them, and what kind of support would help — whether that's emotional, behavioural, or energetic.",
+      },
+      {
+        question: "Do you offer ongoing support?",
+        answer:
+          "Yes. Many of the animals we support are long-term sanctuary residents, and we're glad to offer continued check-ins alongside their regular care.",
+      },
+      {
+        question: "How do I get in touch?",
+        answer:
+          "Reach out through our contact page and let us know a little about your organisation and the animals you care for — we'll take it from there.",
+      },
+    ]}
+  />
+
+  <CTA
+    eyebrow="Get in touch"
+    title="Caring for animals in need?"
+    content="If you run or work with a sanctuary, rescue, or animal centre, we'd love to support the animals in your care."
+    ctaText="Contact us"
+    ctaHref="/contact"
+    secondaryText="See our services"
+    secondaryHref="/services"
+    locale={locale}
+  />
+</MarketingLayout>

@@ -1,0 +1,15 @@
+# Site Settings
+# Edit this file in Git.
+name: "Animal Circle"
+description: "Animal communication, energetic support, and welfare advocacy for animals in sanctuaries, rescues, and animal centres."
+url: "https://animalcircle.org"
+defaultLocale: en
+analyticsProvider: none
+gtmId: ""
+umamiUrl: ""
+umamiId: ""
+mapLatitude: ""
+mapLongitude: ""
+orgName: "Animal Circle"
+orgEmail: "hello@animalcircle.org"
+socialLinks: []
