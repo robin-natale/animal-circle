@@ -1,23 +1,17 @@
 # Security Policy
 
-## Supported Versions
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.x.x   | ✅ Yes (template)  |
-
 ## Reporting a Vulnerability
 
 **Please do NOT report security vulnerabilities through public GitHub issues.**
 
 Instead, report them privately via:
 
-1. **GitHub Security Advisory** (preferred): Security tab → "Report a vulnerability"
-2. **Email**: security@[your-domain].com (if configured)
+1. **GitHub Security Advisory** (preferred, if the repo is hosted on GitHub): Security tab → "Report a vulnerability"
+2. **Email**: hello@animalcircle.org
 
 We will acknowledge receipt within 48 hours and provide a status update within 5 business days.
 
-## Security Measures in This Template
+## Security Measures
 
 This is a static site, so the attack surface is small.
 
@@ -27,28 +21,16 @@ This is a static site, so the attack surface is small.
 - `form-action 'self'` restricts form submissions
 - Allows only configured analytics + the OpenStreetMap embed
 
-### R2 cleanup worker
-- The only Pages Function (`functions/api/cleanup.ts`) can modify R2 objects
-- Guarded by a bearer token (`CLEANUP_SECRET`); returns 401 without it
-- Remove it entirely if you don't use R2
-
 ### Secrets
 - All secrets via Cloudflare Pages secrets or `.dev.vars` (gitignored)
-- No secrets in code — enforced by `validate:secrets` and trufflehog in CI
-
-### Dependency Security
-- **Dependabot** weekly checks for vulnerable dependencies
-- **Dependency Review** on every PR (fails on moderate+ severity)
-- **Secret scanning** via trufflehog on every push
+- No secrets in code — enforced locally by `pnpm run validate:secrets` (part of `pnpm run lint`)
 
 ### Infrastructure
 - **Cloudflare Pages** — DDoS protection, WAF, automatic TLS
 
 ## Scope
 
-This policy applies to:
-- The template codebase itself
-- Generated projects using this template (adapt to your context)
+This policy applies to the Animal Circle codebase and its deployed site.
 
 This policy does NOT cover:
 - User-deployed infrastructure (Cloudflare account settings, DNS, etc.)
