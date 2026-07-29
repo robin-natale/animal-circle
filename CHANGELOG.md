@@ -17,6 +17,6 @@ Initial public template release.
 - Bilingual content (English / Indonesian) with prefix-based i18n routing
 - Git-based content (Markdown) — no CMS or database
 - Marketing pages, blog, and Starlight docs with Pagefind search
-- Cloudflare Pages hosting with optional R2 media + secret-guarded cleanup worker
+- Cloudflare Pages hosting
 - SEO: canonical, hreflang, JSON-LD, Open Graph, sitemap, RSS, dynamic `llms.txt`
 - Static contact page (mailto + OpenStreetMap embed)

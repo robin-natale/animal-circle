@@ -44,21 +44,7 @@ pnpm build
 npx wrangler pages deploy dist --project-name=astro-cloudflare --branch=main
 ```
 
-## R2 media (optional)
+## Media
 
-`wrangler.jsonc` defines an `R2_MEDIA` binding for storing larger media in
-Cloudflare R2. Reference assets via their public R2 URL.
-
-The `functions/api/cleanup.ts` worker can prune orphaned R2 objects. It is
-guarded by a bearer token — set `CLEANUP_SECRET` as a Cloudflare Pages secret and
-send `Authorization: Bearer <secret>` when invoking it.
-
-If you don't need R2, remove the `r2_buckets` binding from `wrangler.jsonc`,
-delete `functions/api/cleanup.ts`, and drop the media-manifest postbuild step from
-`package.json`.
-
-## CI
-
-`.github/workflows/ci.yml` runs lint, type-check, i18n validation, secret
-scanning, dependency review, and a build on every PR. `release.yml` deploys on
-version tags.
+Static media (images, logos, favicons) is served straight from `public/`.
+There is no R2 bucket or media-cleanup worker in this project.

@@ -9,9 +9,8 @@ sidebar:
 .
 ├── public/
 │   ├── _headers             # Cloudflare Pages headers (security/CSP)
+│   ├── logos/                # Light/dark logo SVGs
 │   └── favicon.svg
-├── functions/
-│   └── api/cleanup.ts       # Optional R2 media cleanup worker (secret-guarded)
 ├── src/
 │   ├── components/          # Reusable Astro components (Hero, CTA, FAQ…)
 │   ├── content/             # Content collections (blog, docs, pages, services)
@@ -21,9 +20,8 @@ sidebar:
 │   ├── pages/               # Astro pages with locale routing (+ llms.txt, robots.txt, rss)
 │   ├── styles/              # Global CSS and Tailwind layers
 │   └── content.config.ts    # Content collection schemas
-├── .github/workflows/       # CI/CD workflows
 ├── astro.config.ts          # Astro + Starlight + integrations config
-├── wrangler.jsonc           # Cloudflare Pages config (R2 binding)
+├── wrangler.jsonc           # Cloudflare Pages config
 └── package.json
 ```
 
