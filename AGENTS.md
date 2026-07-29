@@ -27,7 +27,6 @@ This repo is built to be operated by AI coding agents. Stay **on-system**.
 - New routes ship in both locales: `src/pages/x.astro` **and** `src/pages/[locale]/x.astro`.
 
 **Verify before done:** `pnpm build`, `pnpm lint` (includes `pnpm check:kpis`),
-`pnpm run lint:css`. `check:kpis` is the source of truth for design conventions and
-fails CI on off-system edits.
+`pnpm run lint:css`. `check:kpis` is the source of truth for design conventions.
 
 **Portable self-audit prompts:** `system/prompts/` (usable in any chat tool).

@@ -5,23 +5,17 @@ sidebar:
   order: 4
 ---
 
-This starter is built to be operated by AI coding agents (Cursor, Claude, Copilot,
-Windsurf, ChatGPT, …). It ships a small "operating system" of instructions, a
-canonical design knowledge base, and portable audit prompts so an agent — or you —
-can make changes that stay **on-system** instead of drifting.
+This project is set up to be edited by AI coding agents — Claude in particular
+(Claude Code, Claude in this chat, etc.). It ships a small "operating system" of
+instructions, a canonical design knowledge base, and portable audit prompts so an
+agent — or you — can make changes that stay **on-system** instead of drifting.
 
-## What the agent reads
+## What Claude reads
 
-Each tool picks up its own instruction file, but they all point at the same rules:
-
-| File | Used by | Purpose |
-| --- | --- | --- |
-| `AGENTS.md` | Cursor, Codex, most agents | The universal brief: architecture tiers, hard rules, verification commands |
-| `.cursor/rules/*.mdc` | Cursor | Project rules (`architecture`, `design-system`) applied automatically |
-| `.cursor/hooks/` + `.cursor/hooks.json` | Cursor | Guard hooks that flag off-convention edits |
-| `.windsurfrules` | Windsurf | Same rules in Windsurf's format |
-| `.github/copilot-instructions.md` | GitHub Copilot | Same rules for Copilot Chat |
-| `.agents/skills/` + `.agent-skills.lock.md` | Skill-aware agents | Project-scoped skills; the lock file pins reviewed skills (checked in CI) |
+| File | Purpose |
+| --- | --- |
+| `AGENTS.md` | The universal brief: architecture tiers, hard rules, verification commands. Claude reads this at the start of a task. |
+| `.agents/skills/` | Project-scoped skills available to Claude Code |
 
 ## The design knowledge base
 
@@ -77,7 +71,7 @@ Keep dark mode and i18n intact, then run `pnpm build` and `pnpm lint`.
 
 ### Self-audit prompts
 
-`system/prompts/` holds portable prompts you can paste into any chat tool to audit the
+`system/prompts/` holds portable prompts you can paste into Claude to audit the
 project against its conventions. They reference `system/globals/` and the `check:kpis`
 script.
 
@@ -97,9 +91,7 @@ Run the audit in system/prompts/accessibility.md against src/pages/contact.astro
 and list concrete fixes with file:line references.
 ```
 
-### Keeping skills reviewed
+### Project skills
 
-Project skills live in `.agents/skills/`. The reviewed, pinned set is recorded in
-`.agent-skills.lock.md`; the **Skills Verification** CI job reports the locked skills on
-every run. Add or update a skill, then refresh the lock file so collaborators (and CI)
-see the same pinned set.
+Project skills live in `.agents/skills/`. Add or update a skill there when Claude
+needs project-specific guidance beyond `AGENTS.md`.
