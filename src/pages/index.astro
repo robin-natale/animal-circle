@@ -9,43 +9,43 @@ import { t } from "../i18n/ui";
 const locale = (Astro.currentLocale || "en") as "en";
 const tabs = [
   {
+    id: "collective",
+    icon: "circle-dot",
+    heading: "Honour Sovereignty",
+    description:
+      "We honour the animals' authority by holding the belief that we are equal members of one united collective.",
+    points: [
+      "Welfare-centred, never transactional",
+      "Every animal met as a divine being",
+      "In service of the people who care for them every day",
+    ],
+    visual: "We are all individuals part of the same circle.",
+  },
+  {
     id: "communication",
     icon: "message-circle",
     heading: "Animal Communication",
     description:
-      "One-to-one sessions to understand how an animal is really feeling, what's troubling them, and what would genuinely help.",
+      "We will hold a sacred space for the animals, to hear what they need and relay that information to their caregivers.",
     points: [
-      "Behavioural and emotional insight from the animal's perspective",
-      "Support through transitions, illness, and end-of-life",
+      "Gain behavioural and emotional insights from the animals' perspectives",
+      "Support them through transitions, illness, and end-of-life",
       "Available to sanctuaries, rescues, and animal centres",
     ],
-    visual: "\"How are you feeling, and what do you need?\"",
+    visual: "\"What are you feeling? How can we support you to feel heard?\"",
   },
   {
     id: "energetic",
     icon: "sparkles",
     heading: "Energetic Support",
     description:
-      "Gentle, non-invasive energetic and spiritual support for animals experiencing stress, illness, grief, or transition.",
+      "With permission from the animals, we offer distance energetic and spiritual support.",
     points: [
-      "Calming support for anxious or traumatised animals",
-      "Support alongside veterinary and behavioural care",
+      "Helpful for animals experiencing stress, illness, grief, or transition",
+      "Complementary holistic support alongside current care received",
       "Offered with care, patience, and respect for each animal's pace",
     ],
-    visual: "Presence. Patience. Compassion.",
-  },
-  {
-    id: "collective",
-    icon: "circle-dot",
-    heading: "One Collective",
-    description:
-      "We hold the view that animals are not separate from us — they are part of the same living, feeling collective we all belong to.",
-    points: [
-      "Welfare-centred, never transactional",
-      "Every animal met as a whole being",
-      "In service of the people who care for them every day",
-    ],
-    visual: "We are not separate. We are part of the same circle.",
+    visual: "Conscious presence and compassionate care.",
   },
 ];
 ---
@@ -71,7 +71,7 @@ const tabs = [
       <p class="section-head__eyebrow">How we help</p>
       <h2 class="section-head__title">Support for animals in need</h2>
       <p class="section-head__lead">
-        Communication, energetic care, and welfare advocacy for animals in
+        Communication, energetic care, and holistic advocacy for animals in
         the care of sanctuaries, rescues, and animal centres.
       </p>
     </header>
